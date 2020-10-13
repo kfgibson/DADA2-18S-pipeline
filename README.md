@@ -1,6 +1,6 @@
-#This pipeline was desgined to run DADA2 on fastq files from 18S amplicon sequencing. 
+This pipeline was desgined to run DADA2 on fastq files from 18S amplicon sequencing. 
 
-#TO RUN:
+TO RUN:
 
 Step 1: If not already done, install cutadapt in a python virtual environment. After activating the virtual environment this can be done with the following command:
 
