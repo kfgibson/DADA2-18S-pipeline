@@ -28,9 +28,7 @@ For our data this can typically be run as:
 sbatch ~/scripts/01-DADA2_job.sh CCAGCASCCGCGGTAATWCC ACTTTCGTTCTTGATYRR 210 250
 
 
-Step 5: Change the file paths /home/kfgibson/scripts/DADA2_workflow_part2.R and /home/kfgibson/scripts/DADA2_workflow_part3.R in the 02-DADA2_job.sh script to the correct 
-
-file paths on your machine.
+Step 5: Change the file paths /home/kfgibson/scripts/DADA2_workflow_part2.R and /home/kfgibson/scripts/DADA2_workflow_part3.R in the 02-DADA2_job.sh script to the correct file paths on your machine.
 
 
 Step 6: Change the database locations in DADA2_workflow_part3.R to the correct location of these files on your machine.  
