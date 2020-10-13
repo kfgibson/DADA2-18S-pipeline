@@ -1,5 +1,4 @@
-#July 12, 2019
-
+#Last updated October 13, 2020
 #DADA2 pipeline part 3
 
 library(stringr)
@@ -9,9 +8,7 @@ set.seed(100) #for reproducibility
 
 seqtab.nochim.pool <- readRDS("seqtab.nochim.pool.rds")
 
-#assign taxonomy
-#assigns to the genus level
-#minimum bootstrap of 80
+#assign taxonomy to the genus level
 #silva
 taxa_silva <- assignTaxonomy(seqtab.nochim.pool, "~/scratch/Databases/18s/silva/SILVA_archive_downloads/SILVA_132_SSURef_Nr99_tax_silva_seven_levels_no_species.fasta", multithread=TRUE, minBoot=80)
 #pr2

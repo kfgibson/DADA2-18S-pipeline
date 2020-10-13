@@ -1,5 +1,4 @@
-#July 12, 2019
-
+#Last updated October 13, 2020
 #DADA2 pipeline part 1
 
 library(stringr)
@@ -19,8 +18,8 @@ both_primers = FALSE #set to TRUE if both primers need to be removed from the fw
 fprimer = args[2]
 rprimer = args[3]
 
-min_length = args[4] #about 10% less than the expected read length after trimming primers
-max_length = args[5] #about 10% more than the expected read length after trimming primers
+min_length = args[4] 
+max_length = args[5] 
 
 freads_trimmed <- c()
 rreads_trimmed <- c()
@@ -28,7 +27,7 @@ rreads_trimmed <- c()
 freads_filtered <- c()
 rreads_filtered <- c()
 
-#start by removing the primers (if this hasn't been done already)
+#remove the primers with cutadapt 
 for (row in 1:nrow(reads)){
 
 	sample = reads[row,1]
@@ -56,14 +55,11 @@ for (row in 1:nrow(reads)){
 	}
 }
 
+
 print("Cutadapt summary:")
 system("python /home/kfgibson/scripts/sum_cutadapt.py")
 
-print(freads_trimmed)
-print(rreads_trimmed)
-
+#plot read quality profiles 
 pdf("quality_plots.pdf")
 plotQualityProfile(freads_trimmed)
 plotQualityProfile(rreads_trimmed)
-
-#at this point you will have generated quality plot profules for the forward and reverse reads - these need to be looked at to determine the trimming parameters used by DADA2
