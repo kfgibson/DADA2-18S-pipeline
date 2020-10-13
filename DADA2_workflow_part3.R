@@ -14,12 +14,10 @@ taxa_silva <- assignTaxonomy(seqtab.nochim.pool, "~/scratch/Databases/18s/silva/
 #pr2
 taxa_pr2 <- assignTaxonomy(seqtab.nochim.pool, "~/scratch/Databases/18s/pr2/accessions/pr2_version_4.12.0_18S_dada2_accessions_added_no_species.fa", multithread=TRUE, minBoot=80, taxLevels = c("Kingdom", "Supergroup","Division", "Class", "Order", "Family", "Genus"))
 
-
 #assign species using exact matches and allow multiple matches
 species_silva <- assignSpecies(seqtab.nochim.pool, "~/scratch/Databases/18s/silva/SILVA_archive_downloads/SILVA_132_SSURef_Nr99_tax_silva_seven_levels_species_assign.fasta", allowMultiple=TRUE)
 
 species_pr2 <- assignSpecies(seqtab.nochim.pool, "~/scratch/Databases/18s/pr2/accessions/pr2_version_4.12.0_18S_dada2_accessions_added_species_assign.fa", allowMultiple=TRUE)
-
 
 #make ASV headers - first make an empty vector
 asv_headers <- vector(dim(seqtab.nochim.pool)[2], mode="character")
